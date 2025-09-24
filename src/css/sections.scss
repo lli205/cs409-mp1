@@ -1,0 +1,206 @@
+.section { 
+	@include stripe(); 
+	padding: $space-6 $space-3;
+	display: block;
+	min-height: auto;
+	// scroll-margin-top: 96px;
+}
+
+.nav.is-compact ~ main .section {
+	scroll-margin-top: 64px;
+  }
+
+.section { scroll-margin-top: $nav-height-lg; }
+
+.section .container { margin: 0 auto; width: min(1100px, 92%); }
+
+.section--hero {
+	position: relative;
+	background: url('../assets/img/ui/background1.jpg') center/cover fixed no-repeat; // TODO: add this image
+	
+	.hero__content { @include flex-center(column); text-align:center; gap:$space-3; padding: 10vh 0; }
+	
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: rgba(20, 30, 60, 0.55); // background tint
+		pointer-events: none;
+  
+  	}
+}
+
+// animation
+@keyframes fadeUp {
+	from {
+	  opacity: 0;
+	  transform: translateY(20px);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+}
+  
+.section--hero h1,
+.section--hero p,
+.section--hero .btn {
+	opacity: 0;
+	animation: fadeUp 0.8s ease forwards;
+}
+
+.section--hero h1 { animation-delay: 0.2s; }
+.section--hero p   { animation-delay: 0.4s; }
+.section--hero .btn { animation-delay: 0.6s; }
+
+
+
+.moodboard-grid {
+	column-count: 4; column-gap: 1rem;
+	img {
+		width: 100%; display:block; margin-bottom: 1rem; border-radius: $radius; break-inside: avoid;
+		transition: transform .25s ease, filter .25s ease;
+		&:hover { transform: scale(1.03); filter: brightness(1.1); }
+	}
+}
+
+  @media (max-width: 1280px) { .moodboard-grid { column-count: 3; } }
+  @media (max-width: 1024px) { .moodboard-grid { column-count: 2; } }
+  @media (max-width: 640px)  { .moodboard-grid { column-count: 1; } }
+  
+
+
+.video-wrap {
+	display: flex;
+	justify-content: center;
+	margin-top: $space-4;
+}
+
+.video {
+	width: 100%;
+	max-width: 800px;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border-radius: $radius;
+	box-shadow: $shadow;
+	background: #000;
+  }
+  
+  
+.books-grid {
+	display: flex;
+	flex-wrap: nowrap;        
+	justify-content: center;
+	gap: $space-4;
+	overflow-x: auto;
+	padding: $space-4 0;
+	scroll-snap-type: x mandatory;
+	-webkit-overflow-scrolling: touch;
+  }
+  
+  .book {
+	flex: 0 0 auto;
+	width: 180px;
+	display: grid;
+	gap: $space-2;
+	scroll-snap-align: start;
+	text-align: center;
+	background: transparent;
+	border: 0;
+	padding: 0;
+  }
+  
+  .books-grid .book img,
+  .books-grid .book .book__cover {
+	display: block;
+	width: 100%;
+	aspect-ratio: 2 / 3;
+	height: auto;
+	object-fit: cover;
+	border-radius: 10px;
+	box-shadow: 0 6px 18px rgba(0,0,0,.12);
+
+  }
+  
+  /* Title line under the cover */
+//   .book > span {
+// 	display: block;
+// 	font-size: 0.9rem;
+// 	line-height: 1.2;
+//   }
+  
+  @media (min-width: 768px) {
+	.book { width: 180px; }
+  }
+  @media (min-width: 1024px) {
+	.book { width: 200px; }
+  }
+  
+
+.footer {
+	background: $clr-muted;
+	padding: $space-5 0;
+	text-align: center;
+	font-size: 1.1rem;
+  }
+  
+  .footer__inner {
+	display: grid;
+	gap: $space-4;
+	justify-items: center;
+  }
+  
+  .footer__text {
+	font-size: 1.1rem;
+	color: $clr-light;
+	max-width: 55ch;
+	margin: 0 auto;
+  }
+  
+  .socials {
+	display: flex;
+	gap: $space-5;
+  }
+  
+  .socials a {
+	font-size: 2rem;
+	color: $clr-light;
+	transition: color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .socials a:hover {
+	color: $clr-bg;
+	transform: translateY(-3px);
+  }
+  
+  .to-top {
+	inline-size: 44px;
+	block-size: 44px;
+	border-radius: 999px;
+	border: 1px solid rgba(0,0,0,.1);
+	background: $clr-bg;
+	color: $clr-light;
+	display: grid;
+	place-items: center;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+  }
+  
+  .to-top:hover {
+	transform: translateY(-3px);
+  }
+  
+// Alternate background colors for sections
+.section:nth-of-type(odd) {
+	background-color: $clr-bg;
+}
+  
+.section:nth-of-type(even) {
+	background-color: $clr-muted;
+}
+
+.section h2 {
+	margin: 0 0 $space-4;
+}
+  
+  

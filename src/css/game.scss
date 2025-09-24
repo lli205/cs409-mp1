@@ -1,0 +1,53 @@
+// .game__options {
+// 	display: flex;
+// 	gap: 1rem;
+// 	align-items: stretch;
+// 	justify-content: center;
+// 	flex-wrap: wrap;
+//   }
+  
+//   .game__option {
+// 	flex: 1 1 260px;
+// 	border: 1px solid var(--clr-border, #e7e7e7);
+// 	border-radius: 16px;
+// 	padding: 1rem 1.25rem;
+// 	background: var(--clr-surface, #fff);
+// 	box-shadow: 0 2px 10px rgba(0,0,0,.06);
+// 	cursor: pointer;
+// 	transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+// 	text-align: left;
+//   }
+  
+//   .game__option:hover { transform: translateY(-1px); }
+//   .game__option[aria-pressed="true"] {
+// 	outline: none;
+// 	border-color: var(--clr-accent, #4f46e5);
+// 	box-shadow: 0 0 0 3px color-mix(in srgb, var(--clr-accent, #4f46e5), transparent 75%);
+//   }
+  
+//   /* Disable submit when no selection yet */
+//   button[aria-disabled="true"] {
+// 	opacity: .6;
+// 	pointer-events: none;
+//   }
+  
+//   /* Modal base */
+//   .modal {
+// 	position: fixed; inset: 0; display: none;
+// 	background: rgba(0,0,0,.45);
+// 	z-index: 1000;
+//   }
+//   .modal[open] { display: grid; place-items: center; }
+  
+//   .modal__dialog {
+// 	width: min(560px, 92vw);
+// 	background: #fff;
+// 	border-radius: 16px;
+// 	padding: 1.25rem 1.25rem 1rem;
+// 	box-shadow: 0 10px 30px rgba(0,0,0,.25);
+//   }
+//   .modal__title { font-size: 1.25rem; margin: 0 0 .5rem; }
+//   .modal__body { margin: 0 0 1rem; }
+//   .modal__actions { display: flex; justify-content: flex-end; gap: .5rem; }
+//   .modal__close.btn { margin-left: auto; }
+  

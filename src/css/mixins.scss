@@ -1,0 +1,5 @@
+@mixin respond($max) { @media (max-width: $max) { @content; } }
+@mixin flex-center($dir: row) {
+  display:flex; flex-direction:$dir; align-items:center; justify-content:center;
+}
+@mixin stripe($minH: 80vh) { min-height:$minH; width:100%; display:flex; align-items:center; }

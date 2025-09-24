@@ -1,0 +1,8 @@
+@include respond($bp-1280) { .moodboard-grid { column-count: 3; } }
+@include respond($bp-1024) {
+  .moodboard-grid { column-count: 2; }
+  .carousel__slide img { max-height: 380px; }
+}
+@media (max-width: 768px) {
+  .moodboard-grid { column-count: 1; }
+}
